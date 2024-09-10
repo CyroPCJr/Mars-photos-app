@@ -43,14 +43,14 @@ fun MarsPhotosApp() {
         modifier = Modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
         topBar = { MarsTopAppBar(scrollBehavior = scrollBehavior) }
     ) {
-        it
         Surface(
             modifier = Modifier.fillMaxSize()
         ) {
             val marsViewModel: MarsViewModel = viewModel(factory = MarsViewModel.Factory)
             HomeScreen(
                 marsUiState = marsViewModel.marsUiState,
-                //contentPadding = it,
+                retryAction = marsViewModel::getMarsPhotos,
+                contentPadding = it,
             )
         }
     }

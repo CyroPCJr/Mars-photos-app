@@ -49,7 +49,7 @@ fun MarsPhotosTheme(
     // Dynamic color is available on Android 12+
     // Dynamic color in this app is turned off for learning purposes
     dynamicColor: Boolean = false,
-    content: @Composable () -> Unit
+    content: @Composable () -> Unit,
 ) {
     val colorScheme = when {
         dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
